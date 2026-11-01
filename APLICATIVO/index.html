@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+    <title>MoneyTrack Mini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="aplicativo">
+
+        <header class="cabecalho">
+            <div>
+                <h1>MoneyTrack</h1>
+                <p>Seu controle financeiro</p>
+            </div>
+            <div class="perfil">M</div>
+        </header>
+
+        <main>
+
+            <section class="cartao-saldo">
+                <p>Saldo disponível</p>
+                <h2 id="saldo">R$ 0,00</h2>
+
+                <div class="resumo-saldo">
+                    <div>
+                        <span>Receitas</span>
+                        <strong id="receitas">R$ 0,00</strong>
+                    </div>
+
+                    <div>
+                        <span>Despesas</span>
+                        <strong id="despesas">R$ 0,00</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="acoes">
+                <button id="botao-receita" class="botao receita">
+                    + Receita
+                </button>
+
+                <button id="botao-despesa" class="botao despesa">
+                    − Despesa
+                </button>
+            </section>
+
+            <section class="painel-estatisticas">
+                <h2>Visão geral</h2>
+
+                <div class="grade-estatisticas">
+                    <div class="cartao-estatistica">
+                        <span>Total de movimentações</span>
+                        <strong id="total-movimentacoes">0</strong>
+                    </div>
+
+                    <div class="cartao-estatistica">
+                        <span>Receitas cadastradas</span>
+                        <strong id="total-receitas">0</strong>
+                    </div>
+
+                    <div class="cartao-estatistica">
+                        <span>Despesas cadastradas</span>
+                        <strong id="total-despesas">0</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="painel-grafico">
+                <h2>Receitas x Despesas</h2>
+                <p>Comparação das movimentações registradas</p>
+
+                <div class="grafico">
+                    <div class="barra-grupo">
+                        <div class="barra-container">
+                            <div id="barra-receitas" class="barra barra-receitas"></div>
+                        </div>
+                        <span>Receitas</span>
+                        <strong id="valor-grafico-receitas">R$ 0,00</strong>
+                    </div>
+
+                    <div class="barra-grupo">
+                        <div class="barra-container">
+                            <div id="barra-despesas" class="barra barra-despesas"></div>
+                        </div>
+                        <span>Despesas</span>
+                        <strong id="valor-grafico-despesas">R$ 0,00</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- METAS DE ECONOMIA -->
+
+            <section class="painel-metas">
+                <div class="cabecalho-metas">
+                    <div>
+                        <h2>Minhas metas</h2>
+                        <p>Acompanhe seus objetivos financeiros</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="botao-nova-meta"
+                        class="botao-nova-meta"
+                    >
+                        + Nova meta
+                    </button>
+                </div>
+
+                <div id="lista-metas">
+                    <p class="mensagem-metas">
+                        Você ainda não possui metas cadastradas.
+                    </p>
+                </div>
+            </section>
+
+            <!-- FORMULÁRIO DE METAS -->
+
+            <section
+                id="area-formulario-meta"
+                class="area-formulario-meta"
+                hidden
+            >
+                <h2 id="titulo-formulario-meta">Nova meta</h2>
+
+                <p>
+                    Defina seu objetivo e acompanhe seu progresso.
+                </p>
+
+                <form id="formulario-meta">
+
+                    <label for="nome-meta">Nome da meta</label>
+                    <input
+                        type="text"
+                        id="nome-meta"
+                        placeholder="Ex.: Comprar um computador"
+                        maxlength="50"
+                        required
+                    >
+
+                    <label for="valor-meta">Valor desejado (R$)</label>
+                    <input
+                        type="number"
+                        id="valor-meta"
+                        placeholder="Ex.: 1000,00"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+
+                    <label for="guardado-meta">Quanto já foi guardado (R$)</label>
+                    <input
+                        type="number"
+                        id="guardado-meta"
+                        placeholder="Ex.: 200,00"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                        required
+                    >
+
+                    <div class="botoes-formulario">
+                        <button type="submit" id="botao-salvar-meta">
+                            Salvar meta
+                        </button>
+
+                        <button type="button" id="botao-cancelar-meta">
+                            Cancelar
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="painel-mensal">
+                <h2>Resumo do mês</h2>
+                <p id="mes-atual">Movimentações do mês atual</p>
+
+                <div class="linha-resumo">
+                    <span>Receitas do mês</span>
+                    <strong id="receitas-mes">R$ 0,00</strong>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Despesas do mês</span>
+                    <strong id="despesas-mes">R$ 0,00</strong>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Resultado do mês</span>
+                    <strong id="resultado-mes">R$ 0,00</strong>
+                </div>
+            </section>
+
+            <!-- FORMULÁRIO DE MOVIMENTAÇÕES -->
+
+            <section id="area-formulario" class="area-formulario" hidden>
+                <h2 id="titulo-formulario">Nova movimentação</h2>
+                <p id="descricao-formulario">
+                    Preencha as informações abaixo.
+                </p>
+
+                <form id="formulario">
+
+                    <label for="descricao">Descrição</label>
+                    <input
+                        type="text"
+                        id="descricao"
+                        placeholder="Ex.: Compra de material"
+                        required
+                    >
+
+                    <label for="valor">Valor (R$)</label>
+                    <input
+                        type="number"
+                        id="valor"
+                        placeholder="Ex.: 50,00"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Alimentação">Alimentação</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Estudos">Estudos</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Moradia">Moradia</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+
+                    <div class="botoes-formulario">
+                        <button type="submit" id="botao-salvar">
+                            Salvar
+                        </button>
+
+                        <button type="button" id="botao-cancelar">
+                            Cancelar
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="painel-historico">
+                <h2>Histórico de movimentações</h2>
+                <div id="historico"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>MoneyTrack Mini • Versão 1.0 em desenvolvimento</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
