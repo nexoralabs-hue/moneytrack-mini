@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça o MoneyTrack Mini, um aplicativo de organização financeira pessoal.">
+    <title>MoneyTrack Mini | Portfólio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101827;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid #263449;
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #4387ff;
+        }
+
+        .versao {
+            color: #aab6c8;
+            font-size: 12px;
+            background: #1b293c;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .hero {
+            padding: 85px 0 75px;
+            text-align: center;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #76aaff;
+            background: #1b3152;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 8vw, 62px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4387ff;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: auto;
+            color: #aab6c8;
+            font-size: 16px;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 24px;
+            background: #3478f6;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: #2564d8;
+            transform: translateY(-2px);
+        }
+
+        .secao {
+            padding: 55px 0;
+        }
+
+        .titulo-secao {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .descricao-secao {
+            color: #aab6c8;
+            margin-bottom: 28px;
+        }
+
+        .cartoes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .cartao {
+            background: #192638;
+            border: 1px solid #29394f;
+            padding: 23px;
+            border-radius: 15px;
+        }
+
+        .icone {
+            font-size: 25px;
+            margin-bottom: 13px;
+        }
+
+        .cartao h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .cartao p {
+            color: #aab6c8;
+            font-size: 13px;
+        }
+
+        .sobre {
+            background: #192638;
+            border: 1px solid #29394f;
+            padding: 30px;
+            border-radius: 17px;
+        }
+
+        .sobre p {
+            color: #aab6c8;
+            margin-top: 12px;
+        }
+
+        .tecnologias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tecnologias span {
+            background: #26364c;
+            border: 1px solid #354761;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .destaque {
+            text-align: center;
+            padding: 55px 25px;
+            background: linear-gradient(135deg, #1b3d72, #1a2c49);
+            border-radius: 18px;
+            margin: 30px 0 65px;
+        }
+
+        .destaque h2 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .destaque p {
+            color: #c1d3ed;
+            max-width: 580px;
+            margin: auto;
+        }
+
+        footer {
+            border-top: 1px solid #263449;
+            padding: 25px 0;
+            text-align: center;
+            color: #8291a8;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .cartoes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .cartoes {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre {
+                padding: 22px;
+            }
+
+            .navegacao {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navegacao">
+            <div class="logo">Money<span>Track</span></div>
+            <div class="versao">Projeto 01 · Versão 1.0</div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero container">
+            <div class="etiqueta">APLICATIVO DE ORGANIZAÇÃO FINANCEIRA</div>
+
+            <h1>Seu dinheiro.<br>
+                <span>Sua organização.</span>
+            </h1>
+
+            <p>
+                Uma maneira simples e prática de acompanhar receitas,
+                despesas e objetivos financeiros em um só lugar.
+            </p>
+
+            <a class="botao" href="APLICATIVO/index.html">
+                Conhecer o aplicativo →
+            </a>
+        </section>
+
+        <section class="secao container">
+            <h2 class="titulo-secao">O que o MoneyTrack oferece?</h2>
+
+            <p class="descricao-secao">
+                Ferramentas para acompanhar sua organização financeira.
+            </p>
+
+            <div class="cartoes">
+
+                <article class="cartao">
+                    <div class="icone">💰</div>
+                    <h3>Dashboard financeiro</h3>
+                    <p>Visualize seu saldo, receitas e despesas em um só painel.</p>
+                </article>
+
+                <article class="cartao">
+                    <div class="icone">📊</div>
+                    <h3>Estatísticas</h3>
+                    <p>Acompanhe indicadores e compare suas movimentações.</p>
+                </article>
+
+                <article class="cartao">
+                    <div class="icone">📝</div>
+                    <h3>Movimentações</h3>
+                    <p>Registre, consulte, edite e exclua receitas e despesas.</p>
+                </article>
+
+                <article class="cartao">
+                    <div class="icone">🎯</div>
+                    <h3>Metas de economia</h3>
+                    <p>Defina objetivos e acompanhe seu progresso.</p>
+                </article>
+
+                <article class="cartao">
+                    <div class="icone">📅</div>
+                    <h3>Resumo mensal</h3>
+                    <p>Consulte os resultados das movimentações do mês.</p>
+                </article>
+
+                <article class="cartao">
+                    <div class="icone">📱</div>
+                    <h3>Interface responsiva</h3>
+                    <p>Experiência projetada para funcionar em telas móveis.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="secao container">
+            <div class="sobre">
+                <h2 class="titulo-secao">Sobre o projeto</h2>
+
+                <p>
+                    O MoneyTrack Mini é uma aplicação web desenvolvida
+                    com foco em organização, simplicidade e facilidade
+                    de utilização.
+                </p>
+
+                <p>
+                    O projeto utiliza tecnologias fundamentais do
+                    desenvolvimento web para construir uma experiência
+                    interativa e responsiva.
+                </p>
+
+                <h3 style="margin-top: 25px;">Tecnologias utilizadas</h3>
+
+                <div class="tecnologias">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>LocalStorage</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="destaque">
+                <h2>Organização em cada detalhe.</h2>
+
+                <p>
+                    Um projeto desenvolvido para demonstrar
+                    conhecimentos de programação, construção
+                    de interfaces e desenvolvimento web.
+                </p>
+
+                <a class="botao" href="APLICATIVO/index.html">
+                    Abrir MoneyTrack Mini →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            ESTÚDIO DIGITAL · PROJETO 01<br>
+            MoneyTrack Mini — Versão 1.0
+        </div>
+    </footer>
+
+</body>
+</html>
